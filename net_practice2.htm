@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>練習二</title>
+</head>
+
+<body>
+<p>1.首先利用quotaon -aguv先把使用者的quota打開，要創建mis01~mis05的使用者，打useradd &quot;使用者名稱&quot; -g &quot;指定群組&quot; -d /home/群組/使用者名稱，即可建立使用者，打上edquota設定使用者記憶體，最後用passwd設定密碼。</p>
+<p><img src="images/course_network/ex2_1.JPG" width="736" height="107" alt=""/></p>
+<p>2.利用userdel -rf mis04可以強制把mis04使用者以及家目錄刪除。</p>
+<p><img src="images/course_network/ex2_2.JPG" width="740" height="87" alt=""/></p>
+<p>3.先利用ifconfig查到自己虛擬主機的ip，回到win 10桌面利用SSH軟體，使用剛剛建立的使用者帳號登入，打上cat /etc/passwd可查詢使用者內容。</p>
+<p><img src="images/course_network/ex2_3.JPG" width="737" height="305" alt=""/></p>
+<p>4.作業練習，如同上面1、2的步驟，不同的是群組名和使用者名稱，此作業群組名是exam，使用者是edp01~edp03。</p>
+<p><img src="images/course_network/ex2_4.JPG" width="736" height="73" alt=""/></p>
+<p>5.利用刪除指令，刪除edp02帳號。</p>
+<p><img src="images/course_network/ex2_5.JPG" width="738" height="56" alt=""/></p>
+<p>6.利用SSH登入此虛擬主機，查詢使用者內容。</p>
+<p><img src="images/course_network/ex2_6.JPG" width="737" height="261" alt=""/></p>
+</body>
+</html>

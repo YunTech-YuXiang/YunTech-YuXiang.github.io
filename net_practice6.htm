@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>練習六</title>
+</head>
+
+<body>
+<p>1.安裝LAMP環境:</p>
+<p>安裝 Apache Web 主機，打上yum install httpd即可安裝，啟用systemctl start httpd.service，檢查狀態systemctl status httpd.service，如果出現綠色的active(running)表示安裝成功。</p>
+<p>安裝PHP，打上yum install php即可安裝，要再重新啟用一次systemctl restart httpd.service，即完成安裝。接著要測試PHP程式，將工作目錄轉換至cd /var/www/html，打上gedit info.php，打開文字編輯器輸入&lt;?php&gt;phpinfo();&lt;?&gt;這個程式可以顯示版本號碼，在到Linux系統中，防火牆裡新增一個埠號80，即完成。</p>
+<p>最後查詢虛擬機的IP，並且在client端執行網頁，輸入IP位址加上info.php，呈現下圖，表示測試程式成功。</p>
+<p><img src="images/course_network/ex6_1.JPG" width="1021" height="492" /></p>
+<p>2.安裝 phpMyAdmin 資料庫管理</p>
+<p>打上yum install sqld-server即可安裝，啟用systemctl start mysqld.service，再打上systemctl enable mysql.service可以在下次開機時自動執行此服務，切換目錄cd /etc/httpd/conf.d，開啟文字編輯gedit phpMyAdmin.conf，並且在第一個Directory下的在後面加入Require all granted，最後再重啟用一次systemctl restart httpd.service，然後設定密碼mysq_secure_installation，設定好即成功。</p>
+<p>回到client端開啟瀏覽器打上虛擬機的IP位址，如http://192.168.236.128/phpmyadmin，呈現如下圖。</p>
+<p><img src="images/course_network/ex6_2.JPG" width="1070" height="972" /></p>
+<p>3.一開始先打systemctl status httpd.service查看狀態，接著切換目錄到cd /var/www/html進入預設網頁位置，在打上gedit index.html用以修改首頁內容，在文字編輯器中打上以下內容。</p>
+<p>&lt;html&gt;</p>
+<p> &lt;body&gt;</p>
+<p> name:Zhu,YuXiang&lt;br&gt;no:4a690101</p>
+<p> &lt;/body&gt;</p>
+<p>&lt;/html&gt;</p>
+<p>最後回到win 10打上自己虛擬機的IP位址。</p>
+<p><img src="images/course_network/ex6_3.JPG" width="585" height="257" alt=""/></p>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>練習五</title>
+</head>
+
+<body>
+<p>1.利用telnet遠端</p>
+<p>連線:先使用root帳號登入到Linux內，到終端機上下yum install telnet-server，這個指令可以啟用telnet，之後在打上systemctl status telnet.socket，看到綠色的active，則表示成功，並且在防火牆內的連接埠號增加23。再到Win 10上，使用命令提示字元，使用自己的帳號登入進去遠端連線，最後打上cat /etc/passwd，呈現下圖。</p>
+<p><img src="images/course_network/ex5_1.JPG" width="1225" height="783" alt=""/></p>
+<p>2.利用SSH遠端連線:</p>
+<p>Linux本身SSH已經預設啟用，因此不須而外多設定，打上systemctl status sshd.service，可以看到綠色的active表示成功啟用。在到Win 10下使用SSH軟體，連線至虛擬機上的IP，帳號使用自己的學號，並且打上cat /etc/passwd，呈現下圖。</p>
+<p><img src="images/course_network/ex5_2.JPG" width="737" height="627" alt=""/></p>
+<p>3.VNC連線:</p>
+<p>一開始使用root帳號登入Linux系統，在終端機上打上yum install vnc-server指令，安裝vnc連線軟體，在打上vnsserver可以啟用vnc連線，並且系統會詢問你連線密碼要設定多少，最後再到防火牆設定連接埠號，而vnc連接埠號為5901。接著開始win10的client端，到指定的資料夾中(ftp://120.117.61.76)，安裝UltraportableTW，在localhost內填入虛擬機的IP:192.168.236.128，登入剛剛設定的密碼，即可遠端連線至虛擬機。</p>
+<p><img src="images/course_network/ex5_3.JPG" width="1911" height="1023" alt=""/></p>
+<p>4.Webmin連線:</p>
+<p>一開始先下載此檔webmin-1.550-1.noarch，透過SSH Secure Shell Client連線至虛擬機上，並且使用root登入，按下黃色資料夾按鍵，將此檔案放進/tmp下，在回到Linux系統，終端機上打上rpm -ivh webmin...(可按下快捷鍵Tab)，即可安裝此軟體，再到防火牆中新增埠號10000，完成所有設定後，到client端上的瀏覽器打上自己虛擬機的IP位置http://192.168.236.128:10000，進行遠端連線，最後再將語言設為繁體中文，找到使用者與系統，呈現下圖。</p>
+<p><img src="images/course_network/ex5_4.JPG" width="1920" height="1034" alt=""/></p>
+<p>5.Win 10內建遠端連線-朱宇翔(10.2.4.170)連線至吳冠緯(10.2.4.166):</p>
+<p>到Win 10控制台-&gt;系統及安全性-&gt;允許遠端存取，預設是不允許，更改為允許遠端連線，再到使用者帳戶-&gt;管理帳戶，將stust此帳號的密碼設定為mismis，使另一位同學可透過此帳號連線至本機，使用內建的遠端連線軟體，打上帳號進入到另一位同學的桌面，並截圖。</p>
+<p><img src="images/course_network/ex5_5.JPG" width="1338" height="978" alt=""/></p>
+</body>
+</html>

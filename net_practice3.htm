@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>練習三</title>
+</head>
+
+<body>
+<p>1.練習使用三種方法更改檔案的屬性和權限:</p>
+<p>方法一，利用2進位更改;方法二，利用+-更改;方法三，利用等號直接更改。</p>
+<p>最後在使用ls -al可以查看檔案的相關資料。</p>
+<p><img src="images/course_network/ex3_1.JPG" width="742" height="434" alt=""/></p>
+<p>2.先利用指令su更改成超級使用者root，只有root和建立檔案的owner才可以修改，之後利用指令useradd增加一位mis02的使用者，和groupadd增加一個exam107的群組，在使用上述3個指令更改，最後ls -al查看完成作業。</p>
+<p><img src="images/course_network/ex3_2.JPG" width="738" height="178" alt=""/></p>
+<p>3.先利用cat /etc/passwd查看使用者資料，可以看到UID和GID，後使用usermod -u 3838 n4a69010可以改變使用者的UID改變為3838，，最後查看使用者資料，即可看到UID已改變成3838，如下圖。</p>
+<p><img src="images/course_network/ex3_3.JPG" width="737" height="18" alt=""/></p>
+<p>4.先利用groupadd mylove建立新的群組後，使用cat /etc/group查看所有群組資料，使用groupmod -g 4949 mylove改變此群組的GID為4949，查看群組資料，即可看到GID已變成4949，如下圖。</p>
+<p><img src="images/course_network/ex3_4.JPG" width="736" height="17" alt=""/></p>
+</body>
+</html>

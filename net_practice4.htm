@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>練習四</title>
+</head>
+
+<body>
+<p>1.先利用cd指令到student下，使用mkdir compress建立資料夾名為compress，cd compress使工作位置位於資料夾內，逐一建立三個資料夾名為T1、T2、T3，cd  T1之後，在T1底下，利用vi T11.txt可建立文字檔，之後利用此規則，建立完成如下圖，於cd compress資料夾下，輸入指令tree查看。</p>
+<p><img src="images/course_network/ex4_1.JPG" width="738" height="197" alt=""/></p>
+<p>2.要將T1下所有文字檔打包:利用tar cvf 4a6901011.tar T1*.txt打包所有檔案，並在T1下中產生一個打包檔，隨後使用gzip 4a6901011.tar會產生出一個4a6901011.tar.gz的壓縮檔，而原來的打包檔已消失;而T2也使用相同的原理。最後cd到compress資料夾，使用查看的指令tree，如下圖。</p>
+<p><img src="images/course_network/ex4_2.JPG" width="737" height="237" alt=""/></p>
+<p>3.要搬移2個位置的壓縮檔到資料夾T3:先cd到T1，使用mv 4a6901011.tar.gz ../T3可將壓縮檔移動至T3下，隨後cd到T2做相同的動作，cd到T3可看到剛剛移動的2個壓縮檔，隨後使用gzip -d 4a690101*.tar.gz可將2個壓縮檔解壓縮，之後逐一對解壓縮後的檔案，用tar xvf 4a6901011.tar進行解打包，另外一個檔也是一樣，最後cd到compress，利用tree，如下圖。</p>
+<p><img src="images/course_network/ex4_3.JPG" width="740" height="290" alt=""/></p>
+</body>
+</html>
